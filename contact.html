@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+                <path
+                    d="M21 19V8l-8.4 6.72a1 1 0 0 1-1.2 0L3 8v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1ZM20.75 6.44 12 12.95 3.25 6.44a1 1 0 0 1 .63-1.82h16.25a1 1 0 0 1 .62 1.82Z" />
+            </svg>
+            Priyansh Tours
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="18" height="18"
+                        stroke="white" stroke-width="2">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                    </svg>
+                    Home
+                </a></li>
+            <li><a href="#destinations">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="18" height="18"
+                        stroke="white" stroke-width="2">
+                        <circle cx="12" cy="10" r="3" />
+                        <path d="M12 2a8 8 0 0 1 8 8c0 7-8 12-8 12S4 17 4 10a8 8 0 0 1 8-8z" />
+                    </svg>
+                    Destinations
+                </a></li>
+            <li><a href="#packages">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="18" height="18"
+                        stroke="white" stroke-width="2">
+                        <rect x="3" y="8" width="18" height="13" rx="2" ry="2" />
+                        <path d="M16 3v5M8 3v5m5 8h.01" />
+                    </svg>
+                    Packages
+                </a></li>
+            <li><a href="about">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="18" height="18"
+                        stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4m0-4h.01" />
+                    </svg>
+                    About Us
+                </a></li>
+            <li><a href="contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="18" height="18"
+                        stroke="white" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Contact
+                </a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M21 21l-5.2-5.2m3.2-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" />
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" width="30" height="30">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </nav>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Feel free to reach out for inquiries, feedback, or support.</p>
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <form class="contact-form" id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Type your message here" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+    
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Reach Us At</h3>
+                <p><strong>Email:</strong> <a href="mailto:info@priyanshtours.com">info@priyanshtours.com</a></p>
+                <p><strong>Mobile:</strong> <a href="tel:+919213608328">+91 92136 08328</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/priyanshtours" target="_blank">@priyanshtours</a></p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/priyanshtours" target="_blank">facebook.com/priyanshtours</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/919213608328" target="_blank">+91 92136 08328</a></p>
+            </div>
+        </div>
+    
+        <!-- Google Map -->
+        <div class="contact-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83949666468!2d77.06889910305742!3d28.527280316351782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceffbb8e0dbd7%3A0x639ad74788c2f1b7!2sNew%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1616409196175!5m2!1sen!2sin" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Priyansh Tours</h3>
+                <p>Explore the world with us! Your dream destinations await.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@priyanshtours.com</p>
+                <p>Phone: +91 92136 08328</p>
+                <p>Address: New Delhi, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Priyansh Tours. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
