@@ -91,6 +91,15 @@ nav .logo {
     font-weight: bold;
     color: #ffffff;
     margin-right: auto;
+    
+}
+.logo img{
+    max-width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border: 2px solid white; 
 }
 
 /* Navigation links */
@@ -970,7 +979,7 @@ footer {
     }
 
     .about-header p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     .about-block h3 {
@@ -981,4 +990,87 @@ footer {
     .about-block ul li {
         font-size: 0.95rem;
     }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+}
+/* packages */
+/* Packages Section */
+.packages-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-color); /* Dark background for the section */
+    text-align: center;
+}
+
+.packages-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-color); /* White text */
+    margin-bottom: 1rem;
+}
+
+.packages-header p {
+    font-size: 1.2rem;
+    color: var(--text-color-dark); /* Muted white */
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Packages Container */
+.packages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 0 2rem;
+}
+
+/* Package Card */
+.package-card {
+    background-color: var(--card-bg); /* Dark card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow); /* Subtle light shadow */
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color); /* White text for headings */
+    margin-bottom: 1rem;
+}
+
+.package-card p {
+    font-size: 1rem;
+    color: var(--text-color-dark); /* Muted white for description */
+    margin-bottom: 1.5rem;
+}
+
+.package-card .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--button-bg); /* Dark green button background */
+    color: var(--button-text); /* White button text */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.package-card .btn:hover {
+    background: var(--hover-color); /* Highlighted hover effect */
+    color: var(--background-color); /* Button text changes to dark background */
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px var(--hover-color); /* Bright hover shadow */
 }
