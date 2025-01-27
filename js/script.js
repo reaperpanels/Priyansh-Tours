@@ -60,33 +60,6 @@ faqItems.forEach(item => {
         }
     });
 });
-const translations = {
-    en: {
-        welcome: "Welcome to Priyansh Tours",
-        discover: "Discover Incredible India",
-    },
-    hi: {
-        welcome: "प्रियंश टूर्स में आपका स्वागत है",
-        discover: "अविश्वसनीय भारत की खोज करें",
-    },
-    fr: {
-        welcome: "Bienvenue chez Priyansh Tours",
-        discover: "Découvrez l'Inde incroyable",
-    },
-    es: {
-        welcome: "Bienvenido a Priyansh Tours",
-        discover: "Descubre la increíble India",
-    },
-    de: {
-        welcome: "Willkommen bei Priyansh Tours",
-        discover: "Entdecken Sie das unglaubliche Indien",
-    },
-    zh: {
-        welcome: "欢迎来到 Priyansh Tours",
-        discover: "发现不可思议的印度",
-    },
-};
-// contact
 // Contact Form Submission Handler
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent page reload
@@ -103,4 +76,3 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         alert('Please fill out all fields before submitting.');
     }
 });
-

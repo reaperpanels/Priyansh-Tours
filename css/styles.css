@@ -4,20 +4,79 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* dark theme */
+:root {
+    --background-color: #2b2b2b;
+    --text-color: #ffffff;
+    --text-color-dark: #bbbbbb;
+    --contact-info-a: #e8ffed;
+    --contact-info-p: #ffe5e5;
+    --navbar-bg: linear-gradient(90deg, #00271e, #008346);
+    --card-bg: #1e1e1e;
+    --button-bg: #143a20;
+    --button-text: #ffffff;
+    --search-bar-bg: #2c3e50;
+    --hover-color: #ffdf00;
+    --shadow: rgba(255, 255, 255, 0.1) ;
+  }
+  
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
 }
+.lightmode {
+    --background-color: #ffffff;
+    --text-color: #2b2b2b;
+    --text-color-dark: #4a4a4a;
+    --contact-info-a: #456455;
+    --contact-info-p: #967d7d;
+    --navbar-bg: linear-gradient(90deg, #123a31, #52af84);
+    --card-bg: #f9f9f9;
+    --button-bg: #75c58e;
+    --button-text: #ffffff;
+    --search-bar-bg: #e0e0e0;
+    --hover-color: #00274d;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+.theme-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--button-bg);
+    color: var(--button-text);
+    box-shadow: 0 4px 6px var(--shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+    z-index: 10000;
+  }
+  
+  .theme-toggle:hover {
+    transform: scale(1.1);
+    background: var(--hover-color);
+  }
+  
+  .theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
 
 /* Navbar container */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #1f4037, #99f2c8); /* Sleek green gradient */
+    background: var(--navbar-bg); /* Sleek green gradient */
     padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,7 +89,7 @@ nav .logo {
     gap: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     margin-right: auto;
 }
 
@@ -47,7 +106,7 @@ nav ul li a {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -64,6 +123,7 @@ nav .search-bar {
     margin-left: auto;
     padding-right: 20px;
     padding-left: 20px;
+    
 }
 
 nav .search-bar input {
@@ -72,12 +132,14 @@ nav .search-bar input {
     border: none;
     border-radius: 20px 0 0 20px;
     outline: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 nav .search-bar button {
     padding: 0.4rem 0.8rem;
     background: #2c3e50;
-    color: white;
+    color: var(--text-color);
     border: none;
     border-radius: 0 20px 20px 0;
     cursor: pointer;
@@ -93,18 +155,19 @@ nav .search-bar button:hover {
 .discover-india {
     padding: 3rem 2rem;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
+    
 }
 
 .discover-india h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .discover-india p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 2rem;
 }
 
@@ -115,9 +178,9 @@ nav .search-bar button:hover {
 }
 
 .card {
-    background: white;
+    background: var(--background-color);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -130,13 +193,13 @@ nav .search-bar button:hover {
 
 .card h3 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--text-color);
     margin: 1rem 0 0.5rem;
 }
 
 .card p {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-color-dark);
     margin: 0 1rem 1rem;
 }
 
@@ -145,7 +208,7 @@ nav .search-bar button:hover {
     margin: 0 auto 1rem;
     padding: 0.5rem 1.2rem;
     background-color: #1f4037;
-    color: white;
+    color: var(--button-text);
     font-size: 0.9rem;
     border: none;
     border-radius: 20px;
@@ -159,24 +222,24 @@ nav .search-bar button:hover {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px var(--shadow);
 }
 /* Top Experiences Section */
 .top-experiences {
     padding: 3rem 2rem;
-    background-color: #ffffff;
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .top-experiences h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .top-experiences p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 2rem;
 }
 
@@ -190,9 +253,9 @@ nav .search-bar button:hover {
 
 .experience-card {
     flex: 0 0 300px;
-    background: #f9f9f9;
+    background: var(--background-color);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     text-align: left;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -206,63 +269,26 @@ nav .search-bar button:hover {
 
 .experience-card h3 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--text-color);
     margin: 1rem;
 }
 
 .experience-card p {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin: 0 1rem 1rem;
 }
 
 .experience-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px var(--shadow);
 }
 
 /* Scroll Buttons */
 .experience-slider::-webkit-scrollbar {
     display: none; /* Hide scrollbar for a clean look */
 }
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: linear-gradient(to right, #4682b4, #76b4bd);
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-.navbar .logo h1 {
-    font-size: 1.5rem;
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.navbar .nav-links li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.navbar .nav-links li a:hover {
-    color: #ff9800;
-}
-
-.navbar .nav-links li svg {
-    margin-right: 0.5rem;
-}
 
 /* Hamburger Button */
 .hamburger {
@@ -320,7 +346,7 @@ nav .search-bar button:hover {
     }
     
     .nav-links li a {
-        color: white;
+        color: var(--text-color);
         text-decoration: none;
         font-size: 1.2rem;
     }
@@ -348,19 +374,19 @@ nav .search-bar button:hover {
 /* Why Visit India Section */
 .why-visit-india {
     padding: 3rem 2rem;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .why-visit-india h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .why-visit-india p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 2rem;
 }
 
@@ -373,16 +399,16 @@ nav .search-bar button:hover {
 
 .highlight {
     text-align: center;
-    background: white;
+    background: var(--background-color);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .highlight:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px var(--shadow);
 }
 
 .highlight svg {
@@ -391,17 +417,17 @@ nav .search-bar button:hover {
 
 .highlight h3 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 .highlight p {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-color-dark);
 }
 /* Testimonals */
 .testimonials {
     padding: 3rem 2rem;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     text-align: center;
 }
 
@@ -413,10 +439,10 @@ nav .search-bar button:hover {
 }
 
 .testimonial {
-    background: white;
+    background: var(--background-color);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     text-align: center;
 }
 
@@ -426,11 +452,38 @@ nav .search-bar button:hover {
     border-radius: 50%;
     margin-bottom: 1rem;
 }
+
+.testimonials h2{
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.testimonial p{
+    color: var(--text-color-dark);
+}
+
+.testimonial h3{
+    color: var(--text-color);
+}
+
 /* travel blog */
 .travel-blog {
     padding: 3rem 2rem;
-    background-color: #ffffff;
+    background-color: var(--background-color);
     text-align: center;
+}
+
+.travel-blog h2{
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.travel-blog p{
+    color: var(--text-color-dark);
+}
+
+.travel-blog h3{
+    color: var(--text-color);
 }
 
 .blog-cards {
@@ -440,10 +493,10 @@ nav .search-bar button:hover {
 }
 
 .blog-card {
-    background: white;
+    background: var(--background-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     text-align: left;
 }
 
@@ -467,7 +520,7 @@ nav .search-bar button:hover {
     margin: 0 1rem 1rem;
     padding: 0.5rem 1rem;
     background-color: #1f4037;
-    color: white;
+    color: var(--button-text);
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -479,13 +532,14 @@ nav .search-bar button:hover {
 /* gallery */
 .gallery {
     padding: 3rem 2rem;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .gallery h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .gallery-grid {
@@ -497,7 +551,7 @@ nav .search-bar button:hover {
 .gallery-grid img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     transition: transform 0.3s ease;
 }
 
@@ -507,7 +561,7 @@ nav .search-bar button:hover {
 /* faq */
 .faqs {
     padding: 3rem 2rem;
-    background: #f9f9f9;
+    background: var(--background-color);
     text-align: left;
 }
 
@@ -515,12 +569,12 @@ nav .search-bar button:hover {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .faq-item {
     margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--background-color);
     padding: 1rem 0;
     cursor: pointer;
 }
@@ -533,7 +587,7 @@ nav .search-bar button:hover {
 
 .faq-question h3 {
     font-size: 1.2rem;
-    color: #1f4037;
+    color: var(--text-color-dark);
     margin: 0;
 }
 
@@ -553,6 +607,10 @@ nav .search-bar button:hover {
     padding: 0 1rem;
 }
 
+.faq-answer p{
+    color: var(--text-color);
+}
+
 .faq-answer.open {
     max-height: 100px; /* Adjust height as needed */
     padding: 1rem;
@@ -560,7 +618,7 @@ nav .search-bar button:hover {
 /* Footer */
 footer {
     background: #1f4037;
-    color: white;
+    color: #e7e7e7;
     padding: 2rem 1rem;
     text-align: left;
 }
@@ -592,7 +650,7 @@ footer {
 }
 
 .footer-container ul li a {
-    color: white;
+    color: #e7e7e7;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -627,20 +685,21 @@ footer {
 /* Contact Section */
 .contact-section {
     padding: 3rem 2rem;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .contact-section h2 {
     font-size: 2rem;
-    color: #2c3e50;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
 .contact-section p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 2rem;
+    
 }
 
 /* Contact Container Grid Layout */
@@ -655,10 +714,10 @@ footer {
 
 /* Contact Form Styling */
 .contact-form {
-    background: white;
+    background: var(--background-color);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     width: 100%;
     max-width: 500px;
 }
@@ -666,26 +725,28 @@ footer {
 .contact-form label {
     display: block;
     font-size: 0.9rem;
-    color: #2c3e50;
+    font-weight: bolder;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--background-color);
     border-radius: 8px;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-color-dark);
 }
 
 .contact-form button {
     display: block;
     width: 100%;
     padding: 0.8rem;
-    background-color: #1f4037;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--text-color);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -700,11 +761,11 @@ footer {
 
 /* Contact Information Styling */
 .contact-info {
-    background: white;
+    background: var(--background-color);
     padding: 2rem;
     padding-top: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     text-align: left;
     width: 100%;
     max-width: 500px;
@@ -714,17 +775,17 @@ footer {
 .contact-info h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .contact-info p {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: var(--contact-info-p);
 }
 
 .contact-info a {
-    color: #1f4037;
+    color: var(--contact-info-a);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -794,14 +855,14 @@ footer {
 /* About Section Styling */
 .about-section {
     padding: 3rem 2rem;
-    background-color: white;
+    background-color: var(--background-color);
     text-align: center;
 }
 
 /* Header in About Section */
 .about-header h2 {
     font-size: 2.2rem;
-    color: #2c3e50;
+    color: var(--text-color);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -812,13 +873,13 @@ footer {
     display: block;
     width: 60px;
     height: 4px;
-    background: #1f4037;
+    background: var(--background-color);
     margin: 0.5rem auto;
 }
 
 .about-header p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 2rem;
     max-width: 800px;
     margin-left: auto;
@@ -836,21 +897,21 @@ footer {
 }
 
 .about-block {
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
 }
 
 .about-block h3 {
     font-size: 1.5rem;
-    color: #1f4037;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
 .about-block p {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
     margin-bottom: 1rem;
 }
 
@@ -862,18 +923,9 @@ footer {
 .about-block ul li {
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color-dark);
 }
 
-/* Footer */
-footer {
-    background: #1f4037;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
 
 /* Responsive Design */
 @media (max-width: 900px) {
