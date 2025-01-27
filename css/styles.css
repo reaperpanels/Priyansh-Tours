@@ -346,7 +346,7 @@ nav .search-bar button:hover {
     }
     
     .nav-links li a {
-        color: var(--text-color);
+        color: #ffffff;
         text-decoration: none;
         font-size: 1.2rem;
     }
