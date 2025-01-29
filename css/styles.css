@@ -803,13 +803,105 @@ footer {
 .contact-info a:hover {
     color: #99f2c8;
 }
-
+.form-group textarea{
+    color: black;
+}
 /* Contact Map Styling */
 .contact-map iframe {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
+
+
+/* Flex container for phone input and dropdown */
+.phone-number-container {
+    display: flex;
+    align-items: center; /* Vertically aligns dropdown and input */
+    gap: 8px; /* Creates a small space between the dropdown and input */
+    width: 100%; /* Ensures the container fills its parent */
+}
+
+/* Dropdown for country code */
+select.form-input {
+    height: 45px; /* Matches input box height */
+    padding: 0 12px; /* Adds internal spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 90px;
+    color: #333;
+    outline: none;
+    background-color: #fff;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="none" stroke="%23000" stroke-width="1.5" d="M1 1l4 4 4-4"/></svg>') no-repeat right 12px center;
+    background-size: 10px 6px;
+    appearance: none; /* Removes default dropdown arrow */
+    flex-shrink: 0; /* Prevents resizing of dropdown */
+    box-sizing: border-box; /* Ensures padding doesn't affect dimensions */
+}
+
+/* Phone number input field */
+input#phone {
+    height: 45px; /* Matches dropdown height */
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    flex: 1; /* Makes input take up the remaining space */
+    box-sizing: border-box; /* Ensures consistent dimensions */
+}
+
+/* Hover and focus effects */
+select.form-input:hover,
+input#phone:hover {
+    border-color: #007BFF;
+}
+
+select.form-input:focus,
+input#phone:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Ensure both elements are responsive */
+.phone-number-container select,
+.phone-number-container input {
+    max-width: 100%;
+}
+.phone-number-container input{
+    margin-top: 15px;
+}
+
+/* Style the Select2 dropdown */
+.select2-container .select2-selection--single {
+    height: 45px !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    right: 10px;
+}
+
+.select2-container--default .select2-results__option {
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Placeholder styling */
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #aaa;
+}
+
 
 /* Responsive Design: Stacking for Screens Below 900px */
 @media (max-width: 900px) {
@@ -859,6 +951,42 @@ footer {
     .footer-contact {
         flex: unset; /* Remove equal width on smaller screens */
     }
+}
+/* Toast Container */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100000;
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below the viewport */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and slide animation */
+}
+
+.toast-container.show {
+    opacity: 1;
+    transform: translateY(0); /* Slide to the original position */
+}
+
+#toast-message {
+    padding: 15px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #4caf50; /* Default to success green */
+    text-align: center;
+    min-width: 200px;
 }
 
 /* About Section Styling */
@@ -1074,3 +1202,136 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px var(--hover-color); /* Bright hover shadow */
 }
+/* destinations */
+/* Hero Section */
+.hero-destinations {
+    background: var(--navbar-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .hero-destinations .filters {
+    margin-top: 2rem;
+  }
+  
+  .hero-destinations select,
+  .hero-destinations button {
+    padding: 0.7rem;
+    margin: 0.5rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Destination Grid */
+  .destination-grid {
+    padding: 2rem;
+    text-align: center;
+  }
+  .destination-grid h2{
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  .destination-grid p{
+    color: var(--text-color-dark);
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .grid-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--text-color);
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .grid-item:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Destination Highlight */
+  .destination-highlight {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+  }
+  
+  .highlight-container img {
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+  }
+  .highlight-container h3{
+    color: var(--text-color);
+    margin-top: 10px;
+  }
+  .highlight-container p{
+    color: var(--text-color-dark);
+    margin-top: 10px;
+  }
+  .highlight-details {
+    max-width: 500px;
+  }
+  
+  .highlight-details h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .buttondst {
+    background-color: var(--button-bg); /* Default button background from your color variables */
+    color: var(--button-text); /* Default text color */
+    font-size: 1rem; /* Text size */
+    font-weight: bold; /* Bold text for better visibility */
+    padding: 0.7rem 1.5rem; /* Padding for the button */
+    border: none; /* Remove borders */
+    border-radius: 12px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px var(--shadow); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    margin-top: 10px;
+  }
+  
+  /* Hover and Active States */
+  .buttondst:hover {
+    background-color: var(--hover-color); /* Change background color on hover */
+    color: #000; /* Contrast text color on hover */
+    transform: translateY(-3px); /* Lift button slightly */
+    box-shadow: 0 6px 12px var(--shadow); /* Slightly stronger shadow */
+  }
+  
+  .buttondst:active {
+    transform: translateY(2px); /* Button presses inward on click */
+    box-shadow: 0 2px 4px var(--shadow); /* Subtle shadow reduction */
+  }
+  

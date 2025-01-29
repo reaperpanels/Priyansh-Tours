@@ -60,19 +60,3 @@ faqItems.forEach(item => {
         }
     });
 });
-// Contact Form Submission Handler
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (name && email && message) {
-        alert(`Thank you, ${name}! Your message has been sent successfully.`);
-        // Reset the form
-        document.getElementById('contact-form').reset();
-    } else {
-        alert('Please fill out all fields before submitting.');
-    }
-});

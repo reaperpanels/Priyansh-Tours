@@ -1,0 +1,10 @@
+# Enable RewriteEngine
+RewriteEngine On
+
+# Rewrite requests to .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Set index.html as the default when accessing the root
+DirectoryIndex index.html
