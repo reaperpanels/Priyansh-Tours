@@ -1210,11 +1210,9 @@ input#phone:focus {
     text-align: center;
     padding: 3rem 1rem;
   }
-  
   .hero-destinations .filters {
     margin-top: 2rem;
   }
-  
   .hero-destinations select,
   .hero-destinations button {
     padding: 0.7rem;
